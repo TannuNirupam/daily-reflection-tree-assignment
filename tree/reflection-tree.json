@@ -6,46 +6,121 @@
       "text": "Good evening. Let's reflect on your day.",
       "next": "A1_Q1"
     },
+
     {
       "id": "A1_Q1",
       "type": "question",
-      "axis": "Axis 1 - Victim vs Victor",
-      "text": "When something didn’t go as planned today, what was your first reaction?",
+      "axis": "Victim vs Victor",
+      "text": "When something went wrong today, what was your first reaction?",
       "options": [
         {
-          "label": "I thought about what I could have done differently",
-          "signal": "internal",
-          "next": "A1_REFLECT_POS"
+          "label": "I thought about what I could improve",
+          "next": "A1_POS"
         },
         {
-          "label": "I felt frustrated by things outside my control",
-          "signal": "external",
-          "next": "A1_REFLECT_NEG"
-        },
-        {
-          "label": "I adapted and found another way",
-          "signal": "internal",
-          "next": "A1_REFLECT_POS"
-        },
-        {
-          "label": "I waited for someone else to fix it",
-          "signal": "external",
-          "next": "A1_REFLECT_NEG"
+          "label": "I blamed circumstances or others",
+          "next": "A1_NEG"
         }
       ]
     },
+
     {
-      "id": "A1_REFLECT_POS",
+      "id": "A1_POS",
       "type": "reflection",
-      "text": "You showed signs of ownership today. Recognizing your agency is the first step toward growth.",
+      "text": "You showed ownership and internal control.",
+      "next": "BRIDGE_1"
+    },
+
+    {
+      "id": "A1_NEG",
+      "type": "reflection",
+      "text": "External blame is common, but growth starts with ownership.",
+      "next": "BRIDGE_1"
+    },
+
+    {
+      "id": "BRIDGE_1",
+      "type": "bridge",
+      "text": "Let’s move to how you contributed today.",
+      "next": "A2_Q1"
+    },
+
+    {
+      "id": "A2_Q1",
+      "type": "question",
+      "axis": "Contribution vs Entitlement",
+      "text": "What mattered more to you today?",
+      "options": [
+        {
+          "label": "What I contributed",
+          "next": "A2_POS"
+        },
+        {
+          "label": "What I deserved",
+          "next": "A2_NEG"
+        }
+      ]
+    },
+
+    {
+      "id": "A2_POS",
+      "type": "reflection",
+      "text": "Contribution mindset builds trust and long-term growth.",
+      "next": "BRIDGE_2"
+    },
+
+    {
+      "id": "A2_NEG",
+      "type": "reflection",
+      "text": "Entitlement can block progress when expectations replace effort.",
+      "next": "BRIDGE_2"
+    },
+
+    {
+      "id": "BRIDGE_2",
+      "type": "bridge",
+      "text": "Now let’s reflect on your attention and empathy.",
+      "next": "A3_Q1"
+    },
+
+    {
+      "id": "A3_Q1",
+      "type": "question",
+      "axis": "Self-Centric vs Others-Centric",
+      "text": "During your biggest challenge today, who came to mind first?",
+      "options": [
+        {
+          "label": "Only myself",
+          "next": "A3_NEG"
+        },
+        {
+          "label": "Team, customer, or others affected",
+          "next": "A3_POS"
+        }
+      ]
+    },
+
+    {
+      "id": "A3_POS",
+      "type": "reflection",
+      "text": "Others-centric thinking strengthens leadership and trust.",
+      "next": "SUMMARY"
+    },
+
+    {
+      "id": "A3_NEG",
+      "type": "reflection",
+      "text": "Self-focus is natural, but awareness of others creates maturity.",
+      "next": "SUMMARY"
+    },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "Today's reflection shows your growth patterns. Awareness is the first step toward better decisions.",
       "next": "END"
     },
-    {
-      "id": "A1_REFLECT_NEG",
-      "type": "reflection",
-      "text": "Difficult days can make everything feel external. Reflection helps us notice where small choices still existed.",
-      "next": "END"
-    },
+
     {
       "id": "END",
       "type": "end",
