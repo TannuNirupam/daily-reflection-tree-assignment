@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "START",
+      "type": "start",
+      "text": "Good evening. Let's reflect on your day.",
+      "next": "A1_Q1"
+    },
+    {
+      "id": "A1_Q1",
+      "type": "question",
+      "axis": "Axis 1 - Victim vs Victor",
+      "text": "When something didn’t go as planned today, what was your first reaction?",
+      "options": [
+        {
+          "label": "I thought about what I could have done differently",
+          "signal": "internal",
+          "next": "A1_REFLECT_POS"
+        },
+        {
+          "label": "I felt frustrated by things outside my control",
+          "signal": "external",
+          "next": "A1_REFLECT_NEG"
+        },
+        {
+          "label": "I adapted and found another way",
+          "signal": "internal",
+          "next": "A1_REFLECT_POS"
+        },
+        {
+          "label": "I waited for someone else to fix it",
+          "signal": "external",
+          "next": "A1_REFLECT_NEG"
+        }
+      ]
+    },
+    {
+      "id": "A1_REFLECT_POS",
+      "type": "reflection",
+      "text": "You showed signs of ownership today. Recognizing your agency is the first step toward growth.",
+      "next": "END"
+    },
+    {
+      "id": "A1_REFLECT_NEG",
+      "type": "reflection",
+      "text": "Difficult days can make everything feel external. Reflection helps us notice where small choices still existed.",
+      "next": "END"
+    },
+    {
+      "id": "END",
+      "type": "end",
+      "text": "Reflection complete. See you tomorrow."
+    }
+  ]
+}
